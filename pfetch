@@ -688,6 +688,29 @@ get_pkgs() {
     esac
 }
 
+part_header() {
+    echo "fs ($1)"
+}
+
+get_space() {
+    case $os in
+        (Linux*)
+            for disk in $PF_PARTS; do
+                read -r size used pcent target <<- EOF
+                    $(df "$disk" -h --output=size,used,pcent,target | tail -1)
+				EOF
+
+                if [ -n "$target" ]; then
+                    log "$(part_header "$disk")" "$used / $size ($pcent)" >&6
+                else
+
+                    log "$(part_header "$disk")" "Unknown" >&6
+                fi
+            done
+        ;;
+    esac
+}
+
 get_memory() {
     case $os in
         # Used memory is calculated using the following "formula":
@@ -1923,7 +1946,7 @@ EOF
         # Disable globbing and set the positional parameters to the
         # contents of 'PF_INFO'.
         set -f
-        set +f -- ${PF_INFO-ascii title os host kernel uptime pkgs memory}
+        set +f -- ${PF_INFO-ascii title os host kernel uptime pkgs memory space}
 W
         # Iterate over the info functions to determine the lengths of the
         # "info names" for output alignment. The option names and subtitles
@@ -1936,6 +1959,15 @@ W
             [ "${#info}" -gt "${info_length:-0}" ] &&
                 info_length=${#info}
         done
+
+        # Iterate over specified disks to determine the length of "info names".
+        for part in $PF_PARTS; do
+            header="$(part_header "$part")"
+
+            [ "${#header}" -gt "${info_length:-0}" ] &&
+                info_length=${#header}
+        done
+
 
         # Add an additional space of length to act as a gap.
         info_length=$((info_length + 1))

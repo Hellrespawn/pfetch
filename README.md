@@ -51,13 +51,13 @@ picture"!
 # Valid: space separated string
 #
 # OFF by default: shell editor wm de palette
-PF_INFO="ascii title os host kernel uptime pkgs memory"
+PF_INFO="ascii title os host kernel uptime pkgs memory space"
 
 # Example: Only ASCII.
 PF_INFO="ascii"
 
 # Example: Only Information.
-PF_INFO="title os host kernel uptime pkgs memory"
+PF_INFO="title os host kernel uptime pkgs memory space"
 
 # A file to source before running pfetch.
 # Default: unset
@@ -68,6 +68,13 @@ PF_SOURCE=""
 # Default: unset
 # Valid: string
 PF_SEP=":"
+
+# Show disk usage information for these disks, when the 'disk' option is
+# enabled.
+PF_PARTS=""
+
+# Example
+PF_PARTS="/dev/sda1 /dev/sdb2"
 
 # Enable/Disable colors in output:
 # Default: 1
