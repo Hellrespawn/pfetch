@@ -26,13 +26,13 @@ picture"!
 ## OS support
 
 - **Linux**
-    - Alpine Linux, Arch Linux, Arco Linux, Artix Linux, CentOS, Dahlia, Debian, Devuan, Elementary, EndeavourOS, Fedora, Garuda Linux, Gentoo, Guix, Hyperbola, instantOS, KISS Linux, Linux Lite, Linux Mint, Mageia, Manjaro, MX Linux, NixOS, OpenSUSE, Parabola, Pop!\_OS, PureOS, Slackware, Solus, Ubuntu and Void Linux.
-    - All other distributions are supported with a generic penguin logo.
+  - Alpine Linux, Arch Linux, Arco Linux, Artix Linux, CentOS, Dahlia, Debian, Devuan, Elementary, EndeavourOS, Fedora, Garuda Linux, Gentoo, Guix, Hyperbola, instantOS, KISS Linux, Linux Lite, Linux Mint, Mageia, Manjaro, MX Linux, NixOS, OpenSUSE, Parabola, Pop!\_OS, PureOS, Slackware, Solus, Ubuntu and Void Linux.
+  - All other distributions are supported with a generic penguin logo.
 - **Android**
 - **BSD**
-    - DragonflyBSD, FreeBSD, NetBSD and OpenBSD.
+  - DragonflyBSD, FreeBSD, NetBSD and OpenBSD.
 - **Windows**
-    - Windows subsystem for Linux.
+  - Windows subsystem for Linux.
 - **Haiku**
 - **MacOS**
 - **Minix**
@@ -94,7 +94,7 @@ PF_COL3=1
 # Valid: int
 PF_ALIGN=""
 
-# Which ascii art to use.
+# Which ascii art to use. If referring to an existing file, it will use the contents.
 # Default: unset (auto)
 # Valid: string
 PF_ASCII="openbsd"
@@ -123,4 +123,8 @@ XDG_CURRENT_DESKTOP=""
 ## Credit
 
 - [ufetch](https://gitlab.com/jschx/ufetch): Lots of ASCII logos.
-    - Contrary to the belief of a certain youtuber, `pfetch` shares **zero** code with `ufetch`. Only some of the ASCII logos were used.
+  - Contrary to the belief of a certain youtuber, `pfetch` shares **zero** code with `ufetch`. Only some of the ASCII logos were used.
+
+## TODO
+
+- TODO Color blank logo
