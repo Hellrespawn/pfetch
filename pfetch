@@ -1840,7 +1840,7 @@ get_ascii() {
     # Iterate over each line of the ascii art to retrieve the above
     # information. The 'sed' is used to strip '\033[3Xm' color codes from
     # the ascii art so they don't affect the width variable.
-    while read -r line; do
+    while IFS=$(printf '\n\t') read -r line; do
         ascii_height=$((${ascii_height:-0} + 1))
 
         # We use wc -L to handle the display width of non-ASCII characters.
@@ -1855,9 +1855,9 @@ get_ascii() {
     # output without the use of a pipe ('|').
     # This ensures that any variables defined in the while loop
     # are still accessible in the script.
-    done <<-EOF
- 		$(printf %s "$ascii" | sed 's/\[3.m//g')
-	EOF
+    done <<EOF
+$(printf %s "$ascii" | sed 's/\[3.m//g')
+EOF
 
     # Add a gap between the ascii art and the information.
     ascii_width=$((ascii_width + 4))
