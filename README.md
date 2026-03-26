@@ -1,8 +1,4 @@
-<p align="center"><img src="https://user-images.githubusercontent.com/6799467/65944518-68834d80-e421-11e9-9b14-6ca26a16108a.png" width="350px"></p>
-<h1 align="center">pfetch</h1>
-<p align="center">A pretty system information tool written in POSIX sh</p><br>
-
-<img src="https://user-images.githubusercontent.com/6799467/65945384-5bfff480-e423-11e9-863e-4e7cf16eb648.png" width="40%" align="right">
+# pfetch
 
 The goal of this project is to implement a simple system
 information tool in POSIX `sh` using features built into
@@ -17,11 +13,6 @@ If anything in the source code is unclear or is lacking
 in its explanation, open an issue. Sometimes you get too
 close to something and you fail to see the "bigger
 picture"!
-
-<br>
-<br>
-<br>
-<br>
 
 ## OS support
 
@@ -69,8 +60,8 @@ PF_SOURCE=""
 # Valid: string
 PF_SEP=":"
 
-# Show disk usage information for these disks, when the 'disk' option is
-# enabled.
+# Show disk usage information for these partitions, when the 'space'
+# option is enabled.
 PF_PARTS=""
 
 # Example
@@ -101,7 +92,8 @@ PF_COL3=1
 # Valid: int
 PF_ALIGN=""
 
-# Which ascii art to use. If referring to an existing file, it will use the contents.
+# Which ascii art to use. If referring to an existing file, it will use the
+# contents.
 # Default: unset (auto)
 # Valid: string
 PF_ASCII="openbsd"
